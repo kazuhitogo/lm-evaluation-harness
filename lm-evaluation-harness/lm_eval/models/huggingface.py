@@ -253,7 +253,7 @@ class HuggingFaceAutoLM(BaseLM):
             model = self.AUTO_MODEL_CLASS.from_pretrained(
                 pretrained,
                 revision=revision + ("/" + subfolder if subfolder is not None else ""),
-                device_map=device_map,
+                device_map='auto',
                 max_memory=max_memory,
                 offload_folder=offload_folder,
                 load_in_8bit=load_in_8bit,
